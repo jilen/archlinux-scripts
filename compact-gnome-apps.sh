@@ -6,5 +6,8 @@ ls $TMPFILE
 while read line
 do
     sudo mkdir -p /usr/share/applications/backup
-    sudo mv /usr/share/applications/$line /usr/share/applications/backup/$line.bak
+    if [ -f /usr/share/applications/$line ]; then
+        sudo mv /usr/share/applications/$line /usr/share/applications/backup/$line.bak
+    fi
+
 done <  $TMPFILE
