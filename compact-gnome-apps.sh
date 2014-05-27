@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TMPFILE=`mktemp`
-curl https://raw.github.com/jilen/archlinux-scripts/master/res/unused_apps > $TMPFILE
+curl -L https://raw.github.com/jilen/archlinux-scripts/master/res/unused_apps > $TMPFILE
 ls $TMPFILE
 while read line
 do
